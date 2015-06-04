@@ -15,6 +15,7 @@ static NSString *const identifier = @"JTImageViewCellID";
 <UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -39,7 +40,6 @@ static NSString *const identifier = @"JTImageViewCellID";
 }
 
 - (void)setUp {
-    
     // set collectionview flow layout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -57,6 +57,13 @@ static NSString *const identifier = @"JTImageViewCellID";
     [self addSubview:self.collectionView];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"JTImageViewCell" bundle:nil] forCellWithReuseIdentifier:identifier];
+    
+    // init page control
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 20, CGRectGetWidth(self.frame), 20)];
+    self.pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+    self.pageControl.hidesForSinglePage = YES;
+    [self addSubview:self.pageControl];
 }
 
 - (CGSize)intrinsicContentSize  {
@@ -82,7 +89,7 @@ static NSString *const identifier = @"JTImageViewCellID";
 #pragma mark -
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-        [self.delegate imagePageView:self didSelectIndex:indexPath.row % self.images.count];
+        [self.delegate imagePageView:self didSelectIndex:indexPath.row - 1];
 }
 
 /**
@@ -112,6 +119,25 @@ static NSString *const identifier = @"JTImageViewCellID";
 //        
 //    }
 //}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.x == 0) {
+        if (self.images.count > 1)
+        self.pageControl.currentPage = self.images.count- 2;
+        return;
+    }
+    
+    if (scrollView.contentOffset.x == self.collectionView.frame.size.width) {
+        self.pageControl.currentPage = 0;
+    }
+    
+    if (scrollView.contentOffset.x == self.collectionView.frame.size.width * self.images.count) {
+        self.pageControl.currentPage = 0;
+        return;
+    }
+    
+    self.pageControl.currentPage = (scrollView.contentOffset.x - self.collectionView.frame.size.width) / self.collectionView.frame.size.width;
+}
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.images.count <= 1)
@@ -149,8 +175,12 @@ static NSString *const identifier = @"JTImageViewCellID";
 #pragma mark -
 #pragma mark ReloadData
 - (void)reloadData {
-    if (self.images.count > 1)
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    if (self.images.count > 1) {
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        self.pageControl.numberOfPages = self.images.count - 2;
+        self.pageControl.currentPage = 0;
+    }
+    
     [self.collectionView reloadData];
 }
 
