@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D62F5B2043A1D100AA1C93"
-               BuildableName = "JTImagePageViewFramework.framework"
-               BlueprintName = "JTImagePageViewFramework"
+               BuildableName = "JTImagePageView.framework"
+               BlueprintName = "JTImagePageView"
                ReferencedContainer = "container:JTImagePageView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D62F5B2043A1D100AA1C93"
-            BuildableName = "JTImagePageViewFramework.framework"
-            BlueprintName = "JTImagePageViewFramework"
+            BuildableName = "JTImagePageView.framework"
+            BlueprintName = "JTImagePageView"
             ReferencedContainer = "container:JTImagePageView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D62F5B2043A1D100AA1C93"
-            BuildableName = "JTImagePageViewFramework.framework"
-            BlueprintName = "JTImagePageViewFramework"
+            BuildableName = "JTImagePageView.framework"
+            BlueprintName = "JTImagePageView"
             ReferencedContainer = "container:JTImagePageView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
