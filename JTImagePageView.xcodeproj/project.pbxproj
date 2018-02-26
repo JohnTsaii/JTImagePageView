@@ -34,7 +34,6 @@
 		1BF7ED071B1EACB200066B1E /* img0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF7ECF51B1EACB200066B1E /* img0.jpg */; };
 		1BF7ED081B1EACB200066B1E /* panorama copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF7ECF61B1EACB200066B1E /* panorama copy.jpg */; };
 		1BF7ED161B1F431600066B1E /* JTImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7ED141B1F431600066B1E /* JTImageViewCell.m */; };
-		1BF7ED171B1F431600066B1E /* JTImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF7ED151B1F431600066B1E /* JTImageViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +82,6 @@
 		1BF7ECF61B1EACB200066B1E /* panorama copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "panorama copy.jpg"; sourceTree = "<group>"; };
 		1BF7ED131B1F431600066B1E /* JTImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTImageViewCell.h; sourceTree = "<group>"; };
 		1BF7ED141B1F431600066B1E /* JTImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTImageViewCell.m; sourceTree = "<group>"; };
-		1BF7ED151B1F431600066B1E /* JTImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JTImageViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +170,6 @@
 				1BF7ECE21B1EAA2F00066B1E /* JTImagePageView.m */,
 				1BF7ED131B1F431600066B1E /* JTImageViewCell.h */,
 				1BF7ED141B1F431600066B1E /* JTImageViewCell.m */,
-				1BF7ED151B1F431600066B1E /* JTImageViewCell.xib */,
 			);
 			path = JTImagePageView;
 			sourceTree = "<group>";
@@ -284,7 +281,6 @@
 			files = (
 				1BF7ECFA1B1EACB200066B1E /* cat2.jpg in Resources */,
 				1BF7ED021B1EACB200066B1E /* dog3.jpg in Resources */,
-				1BF7ED171B1F431600066B1E /* JTImageViewCell.xib in Resources */,
 				1BF7ED001B1EACB200066B1E /* dog1.jpg in Resources */,
 				1BF7ECFF1B1EACB200066B1E /* dog0.jpg in Resources */,
 				1BF7ECFD1B1EACB200066B1E /* cat6.jpg in Resources */,
@@ -520,6 +516,7 @@
 				1BF7ECDC1B1EA99B00066B1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF7ECDD1B1EA99B00066B1E /* Build configuration list for PBXNativeTarget "JTImagePageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +525,7 @@
 				1BF7ECDF1B1EA99B00066B1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -56,7 +56,7 @@ static NSString *const identifier = @"JTImageViewCellID";
     self.collectionView.contentSize = CGSizeMake(MAXFLOAT, CGRectGetHeight(self.frame));
     [self addSubview:self.collectionView];
     
-    [self.collectionView registerNib:[UINib nibWithNibName:@"JTImageViewCell" bundle:nil] forCellWithReuseIdentifier:identifier];
+    [self.collectionView registerClass:[JTImageViewCell class] forCellWithReuseIdentifier:identifier];
     
     // init page control
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 20, CGRectGetWidth(self.frame), 20)];
